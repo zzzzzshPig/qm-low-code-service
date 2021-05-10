@@ -2,10 +2,10 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportHome from '../../../app/controller/home';
+import ExportEdit from '../../../app/controller/edit';
 
 declare module 'egg' {
   interface IController {
-    home: ExportHome;
+    edit: ExportEdit;
   }
 }
