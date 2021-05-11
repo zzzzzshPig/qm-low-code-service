@@ -1,15 +1,13 @@
 import { Service } from 'egg'
 
-/**
- * Test Service
- */
-export default class Edit extends Service {
+const saveData = new Map()
 
-  /**
-   * sayHi to you
-   * @param name - your name
-   */
-  public async sayHi(name: string) {
-    return `hi, ${name}`
-  }
+export default class Edit extends Service {
+    public async save(id: number, data: any) {
+        saveData.set(id, data)
+    }
+
+    public async getData(id: number) {
+        return saveData.get(id) || []
+    }
 }

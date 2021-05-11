@@ -1,17 +1,17 @@
 import { Controller } from 'egg'
 
 export default class HomeController extends Controller {
-  public async save() {
-    const { ctx } = this
+    public async save() {
+        const { ctx } = this
+        const { id, data } = ctx.request.body
 
-    console.log(ctx.data)
-    ctx.body = await ctx.service.test.sayHi('egg')
-  }
+        return ctx.service.edit.save(id, data)
+    }
 
-  public async get() {
-    const { ctx } = this
+    public async get() {
+        const { ctx } = this
+        const { id } = ctx.request.body
 
-    console.log(ctx.data)
-    ctx.body = await ctx.service.test.sayHi('egg')
-  }
+        return ctx.service.edit.getData(id)
+    }
 }

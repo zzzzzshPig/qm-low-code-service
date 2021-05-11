@@ -4,7 +4,9 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "semi": ["error", "never"],
+    "indent": ["error", 4],
+    "@typescript-eslint/indent": ["error", 4],
+    "comma-dangle": ["error", "never"],
     "@typescript-eslint/semi": ["error", "never"]
   }
 }
